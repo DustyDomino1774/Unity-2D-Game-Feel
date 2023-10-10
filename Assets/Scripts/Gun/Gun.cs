@@ -9,8 +9,6 @@ public class Gun : MonoBehaviour
 {
     public static Action OnShoot;
 
-    // public Transform BulletSpawnPoint => _bulletSpawnPoint;
-
     [SerializeField] private Transform _bulletSpawnPoint;
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private float _gunFireCD = .5f;
@@ -69,7 +67,7 @@ public class Gun : MonoBehaviour
             bullet.gameObject.SetActive(true);
         }, bullet => {
             bullet.gameObject.SetActive(false);
-        }, bullet =>{
+        }, bullet => {
             Destroy(bullet);
         }, false, 20, 40);
     }
